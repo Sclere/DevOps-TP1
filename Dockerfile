@@ -16,8 +16,7 @@ RUN rm ../var/www/html/index.html
 RUN service apache2 restart
 CMD apachectl -D FOREGROUND
 
-COPY database.sql ../etc/mysql/
-RUN service mysql start
-RUN mysql -u root -p < ../etc/mysql/database.sql
+#COPY database.sql ../etc/mysql/#
+#RUN service mysql start#
 
 COPY index.php ../var/www/html
